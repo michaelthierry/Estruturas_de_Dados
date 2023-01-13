@@ -30,6 +30,8 @@ typedef struct lista{
     Dado elementos[MAX];
 }Lista;
 
+//CRIANDO E DESTRUIDO A LISTA
+
 /**
  * @brief Aloca memoria para um ponteiro do tipo Lista
  * 
@@ -43,5 +45,39 @@ Lista* lista_criar();
  * @param lista recebe um ponteiro do tipo lista
  */
 void lista_destruir(Lista *lista);
+
+//OBTENDO INFORMAÇÃO DA LISTA
+/**
+ * @brief Informa se a lista passada está cheia
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @return int -1 se a lista não existir  1 se a lista estiver cheia 0 caso não
+ */
+int lista_cheia(Lista *lista);
+
+/**
+ * @brief Informa se a lista esta vazia
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @return int -1 se a lista não existir 1 se estiver vazia e 0 se não
+ */
+int lista_vazia(Lista *lista);
+
+/**
+ * @brief Informa o tamanho da lista 
+ * 
+ * @param lista um ponterio do tipo lista
+ * @return int -1 se a lista não existir ou o tamanho da lista se existir
+ */
+int lista_tamanho(Lista *lista);
+
+/**
+ * @brief Informa os elementos que constitui a lista
+ * 
+ * @param lista 
+ * @return int 
+ */
+int lista_mostrar(Lista *lista);
+
 
 #endif
