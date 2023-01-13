@@ -31,3 +31,46 @@ void lista_destruir(Lista *lista){
     //Libera a memoria alocado para a lista
     free(lista);
 }
+
+int lista_cheia(Lista *lista){
+    //Se a lista existir
+    if(lista == NULL){
+        return -1;
+    }
+    //Verifica se esta cheia
+    return (lista->quantidade == MAX);
+}
+
+int lista_vazia(Lista *lista){
+    //se a lista existir
+    if(lista == NULL){
+        return -1;
+    }
+    return (lista->quantidade == 0);
+}
+
+int lista_tamanho(Lista *lista){
+    //se a lista existe 
+    if(lista == NULL){
+        return -1;
+    }
+    //se e existir retorna a quantidade
+    return lista->quantidade;
+}
+
+int lista_mostrar(Lista *lista){
+    //se a lista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Mostra a lista 
+    int iterador = 0;
+    printf("|->LISTA<-|");
+    while(iterador < lista->quantidade){
+        printf("|[%i]|\n", lista->elementos[iterador].valor);
+        iterador++;
+    }
+    printf("\n");
+    //retorna sucesso
+    return 1;
+}
