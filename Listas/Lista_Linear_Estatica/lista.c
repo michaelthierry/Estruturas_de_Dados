@@ -126,3 +126,53 @@ int lista_inserir_fim(Lista *lista, Dado elemento){
     //retorna sucesso
     return 1;
 }
+
+int lista_remover_inicio(Lista *lista){
+    //verifica se esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Declarando indice
+    int indice;
+    //Move todos um posição para esquerda
+    for(indice = 0; indice < lista->quantidade - 1; indice++){
+        lista->elementos[indice] = lista->elementos[indice + 1];
+    }
+    //decrementa qunatidade
+    lista->quantidade--;
+    //retorna sucesso
+    return 1;
+}
+
+int lista_remover_elemento(Lista *lista, Dado elemento){
+    //Verifica se a lista esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    int posicao, indice = 0;
+    //Percorre a lista procurando o elemento
+    while((indice < lista->quantidade) && (lista->elementos[indice].valor != elemento.valor)){
+        indice++;
+    }
+    //Verifica se encontrou
+    if(indice == lista->quantidade){
+        return -1;
+    }
+    //Move todos a direita do indice uma posição para esquerda
+    for(posicao = indice; posicao < lista->quantidade-1; posicao++){
+        lista->elementos[posicao] = lista->elementos[posicao + 1];
+    }
+    //Decrementa a quantidade
+    lista->quantidade--;
+    //Retorna sucesso
+    return 1;
+}
+int lista_remover_fim(Lista *lista){
+    //Verifica se esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Apenas decrementa a quantidade
+    lista->quantidade--;
+    return 1;
+}
