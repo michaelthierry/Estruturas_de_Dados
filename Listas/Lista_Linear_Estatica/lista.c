@@ -65,12 +65,64 @@ int lista_mostrar(Lista *lista){
     }
     //Mostra a lista 
     int iterador = 0;
-    printf("|->LISTA<-|");
+    printf("|->LISTA<-|\n");
     while(iterador < lista->quantidade){
-        printf("|[%i]|\n", lista->elementos[iterador].valor);
+        printf("|  [%i]  |\n", lista->elementos[iterador].valor);
         iterador++;
     }
     printf("\n");
+    //retorna sucesso
+    return 1;
+}
+
+int lista_inserir_inicio(Lista *lista, Dado elemento){
+    //verifica se esta cheia
+    if(lista_cheia(lista)){
+        return -1;
+    }
+    //Declara um indice
+    int indice; 
+    //move todos os elemento uma casa para frente
+    for(indice = lista->quantidade - 1; indice >= 0; indice--){
+        lista->elementos[indice + 1] = lista->elementos[indice];
+    }
+    //
+    lista->elementos[0] = elemento;
+    lista->quantidade++;
+    //retorna sucesso 
+    return 1;
+}
+
+int lista_inserir_ordenado(Lista *lista, Dado elemento){
+    //verifica se esta cheia
+    if(lista_cheia(lista)){
+        return -1;
+    }
+    //Percore a lista procurando a posição certa 
+    int posicao, indice = 0;
+    while((indice < lista->quantidade) && (lista->elementos[indice].valor < elemento.valor)){
+        indice++;
+    }
+    //Move todos da posição encontrada para a direita
+    for(posicao = lista->quantidade - 1; posicao >= indice; posicao--){
+        lista->elementos[posicao + 1] = lista->elementos[posicao];
+    }
+    //Insere o elemento na posição e incrementa o quantidade
+    lista->elementos[indice] = elemento;
+    lista->quantidade++;
+    //retorna status de sucesso
+    return 1;
+}
+
+int lista_inserir_fim(Lista *lista, Dado elemento){
+    //Verifica se a lista esta cheia
+    if(lista_cheia(lista)){
+        return -1;
+    }
+    //Adiciona o elemento na ultima posicao
+    lista->elementos[lista->quantidade] = elemento;
+    //incrementa a quantidade
+    lista->quantidade++;
     //retorna sucesso
     return 1;
 }
