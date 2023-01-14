@@ -17,6 +17,7 @@
 int main(){
     //Criando variaveis
     Lista *lista;
+    Dado elemento;
     //Mensagem para usuario
     printf("@> Criando a lista\n");
     //tenta alocar memoria para a lista
@@ -49,7 +50,47 @@ int main(){
             scanf("%i", &opcao);
             //Avaliando a opção
             switch(opcao){
+            int valida;
             case 0:
+                break;
+            case 1:
+                //Pegando informação
+                printf("@> Digite o valor:\n");
+                scanf("%i", &elemento.valor);
+                //chamando a inserção
+                valida = lista_inserir_inicio(lista, elemento);
+                //Verificando
+                if(valida > 0){
+                    printf("@> Sucesso: Inserido no Inicio\n");
+                }else{
+                    printf("@> Falha: Ao inserir no inicio\n");
+                }
+                break;
+            case 2:
+                //Pegando informação
+                printf("@> Digite o valor:\n");
+                scanf("%i", &elemento.valor);
+                //chamando a inserção
+                valida = lista_inserir_ordenado(lista, elemento);
+                //Verificando
+                if(valida > 0){
+                    printf("@> Sucesso: Inserido no meio\n");
+                }else{
+                    printf("@> Falha: Ao inserir no meio\n");
+                }
+                break;
+            case 3:
+                //Pegando informação
+                printf("@> Digite o valor:\n");
+                scanf("%i", &elemento.valor);
+                //chamando a inserção
+                valida = lista_inserir_fim(lista, elemento);
+                //Verificando
+                if(valida > 0){
+                    printf("@> Sucesso: Inserido no fim\n");
+                }else{
+                    printf("@> Falha: Ao inserir no fim\n");
+                }
                 break;
             case 7:
                 lista_mostrar(lista);
