@@ -79,5 +79,32 @@ int lista_tamanho(Lista *lista);
  */
 int lista_mostrar(Lista *lista);
 
+//ADICIONANDO ELEMENTO NA LISTA
+/**
+ * @brief Adiciona um elemento no inicio da lista
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @param elemento uma informação do tipo Dado
+ * @return int -1 para erro e 1 para sucesso
+ */
+int lista_inserir_inicio(Lista *lista, Dado elemento);
+
+/**
+ * @brief Adiciona um elemento na lista de forma ordenada
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @param elemento uma informaçao do tipo Dado
+ * @return int -1 para erro e 1 para sucesso
+ */
+int lista_inserir_ordenado(Lista *lista, Dado elemento);
+
+/**
+ * @brief Insere um elemento no final da lista
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @param elemento uma informação do tipo Dado
+ * @return int -1 para erro 1 para sucesso
+ */
+int lista_inserir_fim(Lista *lista, Dado elemento);
 
 #endif
