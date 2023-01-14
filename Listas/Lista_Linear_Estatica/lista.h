@@ -107,4 +107,30 @@ int lista_inserir_ordenado(Lista *lista, Dado elemento);
  */
 int lista_inserir_fim(Lista *lista, Dado elemento);
 
+//REMOVENDO ELEMENTOS DA LISTA
+/**
+ * @brief Remove um elemento do inicio da lista
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @return int -1 para erro e 1 para sucesso
+ */
+int lista_remover_inicio(Lista *lista);
+
+/**
+ * @brief Remove o elemento da lista se encontrado
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @param elemento elemento que se deseja remover
+ * @return int -1 para erro 1 para sucesso
+ */
+int lista_remover_elemento(Lista *lista, Dado elemento);
+
+/**
+ * @brief Remove um elemento do fim da lista
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @return int -1 para erro e 1 para sucesso
+ */
+int lista_remover_fim(Lista *lista);
+
 #endif
