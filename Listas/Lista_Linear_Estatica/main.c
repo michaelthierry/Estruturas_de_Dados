@@ -92,6 +92,39 @@ int main(){
                     printf("@> Falha: Ao inserir no fim\n");
                 }
                 break;
+            case 4:
+                //chamando a remoção
+                valida = lista_remover_inicio(lista);
+                //Verificando
+                if(valida > 0){
+                    printf("@> Sucesso: Removido do inicio\n");
+                }else{
+                    printf("@> Falha: Ao remover do inicio\n");
+                }
+                break;
+            case 5:
+                //Pegando informação
+                printf("@> Digite o valor a ser removido:\n");
+                scanf("%i", &elemento.valor);
+                //chamando a remoção
+                valida = lista_remover_elemento(lista, elemento);
+                //Verificando
+                if(valida > 0){
+                    printf("@> Sucesso: Removido do meio\n");
+                }else{
+                    printf("@> Falha: Ao remover do meio\n");
+                }
+                break;
+            case 6:
+                //chamando a remoção
+                valida = lista_remover_fim(lista);
+                //Verificando
+                if(valida > 0){
+                    printf("@> Sucesso: Removido do fim\n");
+                }else{
+                    printf("@> Falha: Ao remover do fim\n");
+                }
+                break;
             case 7:
                 lista_mostrar(lista);
                 printf("@> Lista mostrada\n");
