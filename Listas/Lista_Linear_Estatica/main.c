@@ -50,7 +50,7 @@ int main(){
             scanf("%i", &opcao);
             //Avaliando a opção
             switch(opcao){
-            int valida;
+            int valida, indice, valor;
             case 0:
                 break;
             case 1:
@@ -128,7 +128,35 @@ int main(){
             case 7:
                 lista_mostrar(lista);
                 printf("@> Lista mostrada\n");
-                break;       
+                break; 
+            case 8:
+                //Pegando informação
+                printf("@> Digite a posição:\n");
+                scanf("%i", &indice);
+                //chamando a inserção
+                valida = lista_buscar_posicao(lista, indice, &elemento);
+                //Verificando
+                if(valida > 0){
+                    printf("@> Sucesso: Elemento encontrado\n");
+                    printf("Elemento: |%d|\n", elemento.valor);
+                }else{
+                    printf("@> Falha: Elemento não pode ser encontrado\n");
+                }
+                break;
+            case 9:
+                //Pegando informação
+                printf("@> Digite o valor:\n");
+                scanf("%i", &valor);
+                //chamando a inserção
+                valida = lista_buscar_elemento(lista, valor, &elemento);
+                //Verificando
+                if(valida > 0){
+                    printf("@> Sucesso: Elemento encontrado\n");
+                    printf("Elemento: |%d|\n", elemento.valor);
+                }else{
+                    printf("@> Falha: Elemento não pode ser encontrado\n");
+                }
+                break;
             default:
                 printf("@> Opção Invalida!\n");
                 break;
@@ -144,3 +172,4 @@ int main(){
     printf("@> Lista destruida\n");
     return 0;
 }
+
