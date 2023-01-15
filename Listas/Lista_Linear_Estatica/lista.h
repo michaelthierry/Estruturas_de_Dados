@@ -133,4 +133,24 @@ int lista_remover_elemento(Lista *lista, Dado elemento);
  */
 int lista_remover_fim(Lista *lista);
 
+//BUSCA NA LISTA
+/**
+ * @brief Busca o elemento que está na posição passada
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @param posicao posição da lista onde esta o elemento
+ * @param elemento ponteiro para o elemento
+ * @return int -1  para erro 1 para sucesso
+ */
+int lista_buscar_posicao(Lista *lista, int posicao, Dado *elemento);
+
+/**
+ * @brief Procura o elemento passado na lista 
+ * 
+ * @param lista um ponteiro do tipo lista
+ * @param elemento um ponteiro do tipo Dado
+ * @return int -1 para erro 1 para sucesso
+ */
+int lista_buscar_elemento(Lista *lista, int valor, Dado *elemento);
+
 #endif
