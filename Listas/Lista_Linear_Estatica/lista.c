@@ -65,9 +65,9 @@ int lista_mostrar(Lista *lista){
     }
     //Mostra a lista 
     int iterador = 0;
-    printf("|->LISTA<-|\n");
+    printf("|>LISTA\n");
     while(iterador < lista->quantidade){
-        printf("|  [%i]  |\n", lista->elementos[iterador].valor);
+        printf("[%i]\n", lista->elementos[iterador].valor);
         iterador++;
     }
     printf("\n");
@@ -167,6 +167,7 @@ int lista_remover_elemento(Lista *lista, Dado elemento){
     //Retorna sucesso
     return 1;
 }
+
 int lista_remover_fim(Lista *lista){
     //Verifica se esta vazia
     if(lista_vazia(lista)){
@@ -174,5 +175,40 @@ int lista_remover_fim(Lista *lista){
     }
     //Apenas decrementa a quantidade
     lista->quantidade--;
+    return 1;
+}
+
+int lista_buscar_posicao(Lista *lista, int posicao, Dado *elemento){
+    //Verifica se a lista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //verifica se a busca é possivel
+    if(posicao <= 0 || posicao > lista->quantidade){
+        return -1;
+    }
+    //Elemento rece o endeço da posição
+    *elemento = lista->elementos[posicao - 1];
+    //retorna sucesso
+    return 1;
+}
+
+int lista_buscar_elemento(Lista *lista, int valor, Dado *elemento){
+    //Verifica se a lista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Tenta encontrar o elemento
+    int indice = 0;
+    while((indice < lista->quantidade) && (lista->elementos[indice].valor != valor)){
+        indice++;
+    }
+    //Verifica se encontrou
+    if(indice == lista->quantidade){
+        return -1;
+    }
+    //se encontrou
+    *elemento = lista->elementos[indice];
+    //retorna sucesso
     return 1;
 }
