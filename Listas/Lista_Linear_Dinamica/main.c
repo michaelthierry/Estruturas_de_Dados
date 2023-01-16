@@ -53,7 +53,7 @@ int main(){
             int valida, indice, valor;
             case 0:
                 break;
-            /*
+            
             case 1:
                 //Pegando informação
                 printf("@> Digite o valor:\n");
@@ -93,6 +93,7 @@ int main(){
                     printf("@> Falha: Ao inserir no fim\n");
                 }
                 break;
+            
             case 4:
                 //chamando a remoção
                 valida = lista_remover_inicio(lista);
@@ -126,10 +127,12 @@ int main(){
                     printf("@> Falha: Ao remover do fim\n");
                 }
                 break;
+            
             case 7:
                 lista_mostrar(lista);
                 printf("@> Lista mostrada\n");
                 break; 
+            
             case 8:
                 //Pegando informação
                 printf("@> Digite a posição:\n");
@@ -158,7 +161,6 @@ int main(){
                     printf("@> Falha: Elemento não pode ser encontrado\n");
                 }
                 break;
-            */
             default:
                 printf("@> Opção Invalida!\n");
                 break;
