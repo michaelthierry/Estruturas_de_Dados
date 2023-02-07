@@ -72,7 +72,7 @@ int main(){
 
                     scanf("%i", &elemento.valor);
 
-                    valida_operacao = lista_inserir_ordem(lista, elemento);
+                    valida_operacao = lista_inserir_ordenado(lista, elemento);
 
                     if(valida_operacao == 1){
                         printf("@> Inserido no meio\n");
@@ -113,7 +113,7 @@ int main(){
                     printf("@> Digite o valor a ser removido:\n");
                     scanf("%i", &elemento.valor);
                     
-                    valida_operacao = lista_remover_meio(lista, elemento);
+                    valida_operacao = lista_remover_elemento(lista, elemento);
 
                     if(valida_operacao == 1){
                         printf("@> Removido do meio\n");
@@ -150,7 +150,7 @@ int main(){
                 case 9:
                     printf("Digite o valor:\n");
                     scanf("%d", &valor);
-                    valida_operacao = lista_buscar_valor(lista, valor, &elemento);
+                    valida_operacao = lista_buscar_elemento(lista, valor, &elemento);
                     if(valida_operacao <= 0){
                         printf("Não foi possivel fazer a busca\n");
                         break;
